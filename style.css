@@ -1,0 +1,380 @@
+/* Bootstrap override for text-primary to use custom primary color */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* ----------------------------- */
+/* 1. Global Styles & Variables  */
+/* ----------------------------- */
+:root {
+    --primary-color: #F4B21A; /* Vibrant Gold */
+    --primary-hover: #d99a0d;
+    --secondary-color: #f8f9fa; /* Light background */
+    --text-dark: #343a40;
+    --text-light: #6c757d;
+    --border-radius: 15px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    --transition: all 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-light);
+    line-height: 1.7;
+    background-color: #fffdf5;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(244, 178, 26, 0.15)' stroke-width='2'%3E%3Cpath d='M 50 70 Q 75 100 100 70' /%3E%3Cpath d='M 120 150 Q 150 190 180 150' /%3E%3Ccircle cx='150' cy='40' r='10' /%3E%3Ccircle cx='40' cy='160' r='5' /%3E%3Cpath d='M 10 10 Q 20 30 30 10' /%3E%3C/g%3E%3C/svg%3E");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+section {
+    padding: 80px 0;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: var(--transition);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* ----------------------------- */
+/* 2. Navigation Bar             */
+/* ----------------------------- */
+/* =========================
+   NAVBAR – DESKTOP
+========================= */
+
+.navbar {
+    padding: 14px 0;
+    background-color: transparent;
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.8) 0%, transparent 40%),
+        radial-gradient(circle at 80% 40%, rgba(255,255,255,0.7) 0%, transparent 45%),
+        linear-gradient(90deg, #fdfbfb, #ebedee);
+    box-shadow: var(--shadow);
+}
+
+.navbar .navbar-brand {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.navbar .navbar-brand img {
+    height: 60px;
+    width: auto;
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    color: var(--text-dark);
+    margin: 0 10px;
+}
+
+
+/* =========================
+   NAVBAR – MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 6px 0;
+    }
+
+    .navbar.scrolled {
+        padding: 4px 0;
+    }
+
+    .navbar .navbar-brand img {
+        height: 60px;
+    }
+
+    .navbar .nav-link {
+        padding: 6px 10px;
+        margin: 0;
+        font-size: 0.95rem;
+    }
+
+    .navbar-collapse {
+        padding: 5px 0;
+    }
+}
+
+
+
+/* ----------------------------- */
+/* 3. Hero Section               */
+/* ----------------------------- */
+.hero-section {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(254, 245, 221, 0.9)), url('https://via.placeholder.com/1920x1080/&text=+');
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0 100px 0;
+}
+
+
+.hero-section h1 {
+    color: var(--text-dark);
+}
+
+.hero-section .lead {
+    max-width: 600px;
+    margin: 20px auto 30px;
+}
+/* =========================
+   HERO SECTION – IMAGE BG
+========================= */
+
+.hero-section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.85),
+            rgba(255, 255, 255, 0.85)
+        ),
+        url("home.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Content glass effect */
+.hero-content {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 800px;
+}
+/* =========================
+   Mobile Hero
+========================= */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 60vh;
+        background:
+            linear-gradient(
+                rgba(255, 255, 255, 0.75),
+                rgba(255, 255, 255, 0.75)
+            ),
+            url("home.png"); /* mobile-optimized image */
+        background-size: cover;
+        background-position: top center; /* keeps humans visible */s
+        background-repeat: no-repeat;
+    }
+
+    .hero-content {
+        padding: 25px;
+        border-radius: 16px;
+        max-width: 95%;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .hero-section .btn {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+    }
+}
+
+
+/* ----------------------------- */
+/* 4. Features & About Sections  */
+/* ----------------------------- */
+.feature-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+/* ----------------------------- */
+/* 5. How It Works Section       */
+/* ----------------------------- */
+#how-it-works {
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='20' y='40' font-size='30' opacity='0.2'%3E😂%3C/text%3E%3Ctext x='100' y='120' font-size='50' opacity='0.2' transform='rotate(15 100 120)'%3E😂%3C/text%3E%3Ctext x='150' y='80' font-size='20' opacity='0.2' transform='rotate(-10 150 80)'%3E😊%3C/text%3E%3C/svg%3E");
+}
+
+.step {
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 20px;
+    box-shadow: 0 5px 15px rgba(244, 178, 26, 0.3);
+}
+
+/* ----------------------------- */
+/* 6. Competitions Section       */
+/* ----------------------------- */
+.competition-card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.competition-card:hover {
+    transform: translateY(-5px);
+}
+
+.competition-card .card-img-top {
+    border-bottom: 1px solid #eee;
+}
+
+/* ----------------------------- */
+/* 7. Testimonials Section       */
+/* ----------------------------- */
+.testimonial-card {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    height: 100%;
+}
+
+.testimonial-card p {
+    font-style: italic;
+}
+
+.testimonial-card span {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* ----------------------------- */
+/* 8. Final CTA Section          */
+/* ----------------------------- */
+.final-cta-section {
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-hover));
+}
+
+.final-cta-section .btn-light {
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
+    color: var(--primary-color);
+}
+
+.app-badge {
+    height: 60px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-badge img {
+    height: 50px; /* Adjust image height as needed */
+    width: auto;
+    margin-right: 10px;
+}
+
+/* ----------------------------- */
+/* 9. Contact & Footer           */
+/* ----------------------------- */
+#contact .form-control {
+    border-radius: 50px;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+}
+
+#contact .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(244, 178, 26, 0.25);
+    border-color: var(--primary-color);
+}
+
+footer {
+    background-color: var(--secondary-color);
+}
+
+footer .social-icons a {
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+footer .social-icons a:hover {
+    color: var(--primary-color);
+}
+
+footer .list-inline-item a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+footer .list-inline-item a:hover {
+    color: var(--primary-color);
+}
+
+.policy-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* ----------------------------- */
+/* 10. Responsive Design         */
+/* ----------------------------- */
+@media (max-width: 991.98px) {
+    .hero-section {
+        padding-top: 120px;
+    }
+    .navbar {
+        background-color: white;
+        box-shadow: var(--shadow);
+    }
+}
+
+@media (max-width: 768px) {
+    #about .text-center {
+        margin-top: 30px;
+    }
+    .step {
+        margin-bottom: 30px;
+    }
+}
